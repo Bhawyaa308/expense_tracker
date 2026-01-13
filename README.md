@@ -1,16 +1,83 @@
-# React + Vite
+# Smart Expense Tracker & Budget Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project is a **Smart Expense Tracker and Budget Management System** designed to analyze income, expenses, savings, and overspending patterns.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The system is primarily **SQL-driven**, focusing on strong database design and analytical querying.  
+A lightweight **backend (Node.js + Express)** is used to manage data flow, and a **React (Vite)** frontend is included for future extensibility.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Key Highlights
 
-## Expanding the ESLint configuration
+- Strong focus on **database design and SQL analytics**
+- Clean separation of **frontend and backend**
+- Demonstrates real-world financial use cases
+- Suitable for **backend, database, and data-focused roles**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Features
+
+- Tracks income and expense transactions for multiple users
+- Categorizes transactions into income and expense types
+- Analyzes category-wise spending against defined budgets
+- Identifies top spending categories per user
+- Compares month-over-month spending trends
+- Tracks savings goals and achievement status
+- Generates alerts when category budgets are exceeded
+
+---
+
+## Database Design
+
+The system is built using a **normalized relational schema** with the following tables:
+
+- Users
+- Categories
+- Transactions
+- Budgets
+- Savings
+- Alerts
+
+The schema is designed to ensure data consistency and efficient analytical querying.
+
+---
+
+## Key SQL Concepts Used
+
+- Inner joins across multiple tables
+- Aggregate functions such as `SUM`
+- `GROUP BY` and `HAVING` clauses
+- Window functions (`ROW_NUMBER`, `LAG`)
+- `CASE` expressions for conditional logic
+- Views for reusable monthly summaries
+
+---
+
+## Project Structure
+
+```text
+expense_tracker/
+├─ backend/
+│  ├─ routes/
+│  ├─ db.js
+│  ├─ server.js
+│  ├─ package.json
+│  └─ package-lock.json
+│
+├─ frontend/
+│  ├─ src/
+│  ├─ public/
+│  ├─ index.html
+│  ├─ vite.config.js
+│  ├─ eslint.config.js
+│  ├─ package.json
+│  └─ package-lock.json
+│
+├─ schema.sql
+├─ data.sql
+├─ queries.sql
+└─ README.md
+```
